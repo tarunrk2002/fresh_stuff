@@ -1,18 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webgreen.data;
+using webgreen.Models;
 
 namespace webgreen.Controllers
 {
     public class CategoryController : Controller
     {
-
-        //public CategoryController(ApplicationDbContext db) 
-        //{
-        //   var g =  db.categories.ToList();
-        //}
+        private readonly ApplicationDbContext _db;
+        public CategoryController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
-            return View("Category");
+            List<cats> ct = _db.categories.ToList();
+
+            return View();
         }
 
         public IActionResult Next()
