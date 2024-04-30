@@ -14,8 +14,9 @@ namespace webgreen.Controllers
         public IActionResult Index()
         {
             List<cats> ct = _db.categories.ToList();
+            
 
-            return View();
+            return View(ct);
         }
 
         public IActionResult Next()
