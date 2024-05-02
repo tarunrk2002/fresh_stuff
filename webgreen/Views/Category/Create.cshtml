@@ -1,0 +1,61 @@
+﻿@model cats
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
+    <title>Create Category</title>
+ 
+  <style>
+      .form-group{
+          padding-top: 20px;
+      }
+      #submitCat{
+          padding-top: 20px;
+      }
+  </style>
+</head>
+<body>
+     
+    
+    
+       <form>
+           <div class="row">
+            <h2 class="text-focus-in">Create Category</h2>
+               <div class="card" style="width: 500px; height: 290px; padding-bottom: 28px;">
+
+                   
+                   <div class="container">
+                       <div class="form-group row" style="display: flex; align-items: center;">
+                           <div class="col-sm-4">
+                               <label for="name">Category Name</label>
+                           </div>
+                           <div class="col-sm-6">
+                               <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                           </div>
+                       </div>
+                       <div class="form-group row" style="display: flex; align-items: center;">
+                           <div class="col-sm-4">
+                               <label for="email">Display Order</label>
+                           </div>
+                           <div class="col-sm-6">
+                               <input type="text" class="form-control" id="email" placeholder="">
+                           </div>
+                       </div>
+                       <div class="form-group row">
+                           <div class="col-sm-6">
+                               <button type="submit" class="btn btn-primary" style="margin-left: 165px;">Submit</button>
+                           </div>
+                       </div>
+                   </div>
+
+               </div>
+           </div>
+        
+        </form>
+   
+   
+
+    <!-- Include Bootstrap JS and dependencies -->
+
+</body>
+</html>
