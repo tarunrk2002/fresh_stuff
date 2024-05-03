@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace webgreen.Models
 {
@@ -9,7 +10,9 @@ namespace webgreen.Models
         public int id { get; set; }
         [Required]
         // required means not null 
+        [DisplayName("name")]
         public string name { get; set; }
+        [DisplayName("Display Order")]
         public int displayorder { get; set; }
     }
 }

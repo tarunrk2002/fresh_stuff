@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Plugins;
 using webgreen.data;
 using webgreen.Models;
 
@@ -15,8 +16,8 @@ namespace webgreen.Controllers
         public IActionResult Index()
         {
             List<cats> ct = _db.categories.ToList();
-            List<string> categories = new List<string>();
-            categories.Add("f4ef4ef");
+           
+           
 
             return View(ct);
         }
@@ -26,6 +27,16 @@ namespace webgreen.Controllers
             return View();
         }
 
-        
+        [HttpPost]
+        public IActionResult Create(cats catsobj)
+        {
+            _db.categories.Add(catsobj);
+            
+            _db.SaveChanges();
+            
+            return View();
+        }
+
+
     }
 }
