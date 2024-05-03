@@ -39,26 +39,6 @@ namespace webgreen.Migrations
                     b.HasKey("id");
 
                     b.ToTable("categories");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            displayorder = 1,
-                            name = "comedy"
-                        },
-                        new
-                        {
-                            id = 2,
-                            displayorder = 2,
-                            name = "romance"
-                        },
-                        new
-                        {
-                            id = 3,
-                            displayorder = 3,
-                            name = "romcom"
-                        });
                 });
 #pragma warning restore 612, 618
         }

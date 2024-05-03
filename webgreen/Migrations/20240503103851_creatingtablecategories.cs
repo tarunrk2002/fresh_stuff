@@ -5,7 +5,7 @@
 namespace webgreen.Migrations
 {
     /// <inheritdoc />
-    public partial class addingcategorytodb : Migration
+    public partial class creatingtablecategories : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

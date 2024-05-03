@@ -11,8 +11,8 @@ using webgreen.data;
 namespace webgreen.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240429074414_addingcategorytodb")]
-    partial class addingcategorytodb
+    [Migration("20240503103851_creatingtablecategories")]
+    partial class creatingtablecategories
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
