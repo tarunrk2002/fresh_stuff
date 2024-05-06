@@ -11,8 +11,10 @@ namespace webgreen.Models
         [Required]
         // required means not null 
         [DisplayName("name")]
+        [MaxLength(25)]
         public string name { get; set; }
         [DisplayName("Display Order")]
+        [Range(1,90,ErrorMessage ="give the actual and correct number")]
         public int displayorder { get; set; }
     }
 }

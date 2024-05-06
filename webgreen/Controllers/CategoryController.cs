@@ -7,15 +7,15 @@ namespace webgreen.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly ApplicationDbContext db;
         public CategoryController(ApplicationDbContext db)
         {
            
-            _db = db;
+            this.db = db;
         }
         public IActionResult Index()
         {
-            List<cats> ct = _db.categories.ToList();
+            List<cats> ct = db.categories.ToList();
            
            
 
@@ -30,10 +30,38 @@ namespace webgreen.Controllers
         [HttpPost]
         public IActionResult Create(cats catsobj)
         {
-            _db.categories.Add(catsobj);
-            
-            _db.SaveChanges();
-            
+           
+                if (ModelState.IsValid)
+                {
+                    db.categories.Add(catsobj);
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View();       
+        }
+
+        public IActionResult Edit(int id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            cats catsedit = db.categories.Find(id);
+            return View(catsedit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit()
+        {
+
+           
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
             return View();
         }
 
