@@ -41,23 +41,26 @@ namespace webgreen.Controllers
                 return View();       
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            cats catsedit = db.categories.Find(id);
+            cats? catsedit = db.categories.Find(id);
             return View(catsedit);
         }
 
         [HttpPost]
-        public IActionResult Edit()
+        public IActionResult Edit(cats editcats)
         {
+            db.categories.Update(editcats);
 
-           
-            return View();
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+            
         }
 
         public IActionResult Delete()
