@@ -36,7 +36,7 @@ namespace webgreen.Controllers
                     db.categories.Add(catsobj);
 
                     db.SaveChanges();
-                TempData["ok"] = "created new category";
+                    TempData["ok"] = "created new category";
                     return RedirectToAction("Index");
                 }
                 return View();       
