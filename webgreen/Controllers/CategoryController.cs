@@ -63,11 +63,27 @@ namespace webgreen.Controllers
             
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            cats? catsedit = db.categories.Find(id);
+            return View(catsedit);
         }
 
+        [HttpPost]
+        public IActionResult Delete(cats editcats)
+        {
+            db.categories.Remove(editcats);
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
 
     }
 }
