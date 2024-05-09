@@ -5,7 +5,7 @@ using webgreen.Models;
 
 namespace webgreen.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : Controller   
     {
         private readonly ApplicationDbContext db;
         public CategoryController(ApplicationDbContext db)
