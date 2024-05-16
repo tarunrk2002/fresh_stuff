@@ -21,7 +21,7 @@ namespace webgreen.Controllers
 
             return View(ct);
         }
-       
+        
         public IActionResult Create()
         {
             return View();
