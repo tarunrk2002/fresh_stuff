@@ -86,5 +86,10 @@ namespace webgreen.Controllers
 
         }
 
+        public IActionResult next()
+        {
+            return View();
+        }
+
     }
 }
