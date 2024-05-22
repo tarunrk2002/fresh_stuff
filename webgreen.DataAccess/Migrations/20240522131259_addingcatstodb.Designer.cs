@@ -11,8 +11,8 @@ using webgreen.DataAccess.data;
 namespace webgreen.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240522125412_checking")]
-    partial class checking
+    [Migration("20240522131259_addingcatstodb")]
+    partial class addingcatstodb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

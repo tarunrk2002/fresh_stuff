@@ -5,7 +5,7 @@
 namespace webgreen.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class checking : Migration
+    public partial class addingcatstodb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
