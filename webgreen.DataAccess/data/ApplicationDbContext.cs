@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using webgreen.Models;
+using webgreen.Models.Models;
 
-namespace webgreen.data
+namespace webgreen.DataAccess.data
 {
     public class ApplicationDbContext:DbContext
     {

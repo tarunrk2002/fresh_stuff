@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol.Plugins;
-using webgreen.data;
-using webgreen.Models;
+using webgreen.DataAccess.data;
+
+using webgreen.Models.Models;
 
 namespace webgreen.Controllers
 {

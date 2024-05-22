@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using webgreen.Models;
+
+using webgreen.Models.Models;
 
 namespace webgreen.Controllers
 {

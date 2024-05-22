@@ -1,7 +1,7 @@
 
 
 using Microsoft.EntityFrameworkCore;
-using webgreen.data;
+using webgreen.DataAccess.data;
 
 var builder = WebApplication.CreateBuilder(args);
 

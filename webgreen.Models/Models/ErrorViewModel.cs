@@ -1,4 +1,4 @@
-namespace webgreen.Models
+namespace webgreen.Models.Models
 {
     public class ErrorViewModel
     {

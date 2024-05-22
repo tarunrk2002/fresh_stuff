@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace webgreen.Models
+namespace webgreen.Models.Models
 {
     public class cats
     {
