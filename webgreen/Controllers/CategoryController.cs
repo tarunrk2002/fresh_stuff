@@ -11,6 +11,7 @@ namespace webgreen.Controllers
         private readonly ApplicationDbContext db;
         public CategoryController(ApplicationDbContext db)
         {
+            
            
             this.db = db;
         }
