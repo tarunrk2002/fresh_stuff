@@ -9,9 +9,9 @@ namespace webgreen.Repository.IRepository
         void add (T entity);
         void remove (T entity);
         T Get(Expression<Func<T, bool>> filter);
-        void delete (T entity);
+        
 
-        void deleterange (T entity);
+        void removerange (IEnumerable<T> entity);
 
     }
 }
