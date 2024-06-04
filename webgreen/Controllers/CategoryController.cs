@@ -3,13 +3,14 @@ using NuGet.Protocol.Plugins;
 using webgreen.DataAccess.data;
 
 using webgreen.Models.Models;
+using webgreen.Repository.IRepository;
 
 namespace webgreen.Controllers
 {
     public class CategoryController : Controller   
     {
-        private readonly ApplicationDbContext db;
-        public CategoryController(ApplicationDbContext db)
+        private readonly ICatsRepository db;
+        public CategoryController(ICatsRepository db)
         {
             
            
@@ -17,7 +18,7 @@ namespace webgreen.Controllers
         }
         public IActionResult Index()
         {
-            List<cats> ct = db.categories.ToList();
+            List<cats> ct = db.GetAll().ToList();
            
            
 
@@ -35,9 +36,9 @@ namespace webgreen.Controllers
            
                 if (ModelState.IsValid)
                 {
-                    db.categories.Add(catsobj);
+                    db.add(catsobj);
 
-                    db.SaveChanges();
+                    db.save();
                     TempData["ok"] = "created new category";
                     return RedirectToAction("Index");
                 }
@@ -51,16 +52,16 @@ namespace webgreen.Controllers
                 return NotFound();
             }
 
-            cats? catsedit = db.categories.Find(id);
+            cats? catsedit = db.Get(u=>u.id==id);
             return View(catsedit);
         }
 
         [HttpPost]
         public IActionResult Edit(cats editcats)
         {
-            db.categories.Update(editcats);
+            db.update(editcats);
 
-            db.SaveChanges();
+            db.save();
             return RedirectToAction("Index");
 
             
@@ -73,16 +74,16 @@ namespace webgreen.Controllers
                 return NotFound();
             }
 
-            cats? catsedit = db.categories.Find(id);
+            cats? catsedit = db.Get(u => u.id == id);
             return View(catsedit);
         }
 
         [HttpPost]
         public IActionResult Delete(cats editcats)
         {
-            db.categories.Remove(editcats);
+            db.remove(editcats);
 
-            db.SaveChanges();
+            db.save();
             return RedirectToAction("Index");
 
 
