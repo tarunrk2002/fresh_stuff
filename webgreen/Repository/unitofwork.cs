@@ -1,7 +1,8 @@
 ﻿using webgreen.DataAccess.data;
 using webgreen.Models.Models;
+using webgreen.Repository.IRepository;
 
-namespace webgreen.Repository.IRepository
+namespace webgreen.Repository
 {
     public class unitofwork : Iunitofwork
     {
@@ -12,12 +13,12 @@ namespace webgreen.Repository.IRepository
             this.data = data;
             Cats = new CatsRepository(data);
         }
-        
-        
+
+
 
         public void save()
         {
-           data.SaveChanges();
+            data.SaveChanges();
         }
     }
 }
