@@ -9,8 +9,8 @@ namespace webgreen.Controllers
 {
     public class CategoryController : Controller   
     {
-        private readonly ICatsRepository db;
-        public CategoryController(ICatsRepository db)
+        private readonly Iunitofwork db;
+        public CategoryController(Iunitofwork db)
         {
             
            
@@ -18,7 +18,7 @@ namespace webgreen.Controllers
         }
         public IActionResult Index()
         {
-            List<cats> ct = db.GetAll().ToList();
+            List<cats> ct = db.Cats.GetAll().ToList();
            
            
 
@@ -36,7 +36,7 @@ namespace webgreen.Controllers
            
                 if (ModelState.IsValid)
                 {
-                    db.add(catsobj);
+                    db.Cats.add(catsobj);
 
                     db.save();
                     TempData["ok"] = "created new category";
@@ -52,14 +52,14 @@ namespace webgreen.Controllers
                 return NotFound();
             }
 
-            cats? catsedit = db.Get(u=>u.id==id);
+            cats? catsedit = db.Cats.Get(u=>u.id==id);
             return View(catsedit);
         }
 
         [HttpPost]
         public IActionResult Edit(cats editcats)
         {
-            db.update(editcats);
+            db.Cats.update(editcats);
 
             db.save();
             return RedirectToAction("Index");
@@ -74,14 +74,14 @@ namespace webgreen.Controllers
                 return NotFound();
             }
 
-            cats? catsedit = db.Get(u => u.id == id);
+            cats? catsedit = db.Cats.Get(u => u.id == id);
             return View(catsedit);
         }
 
         [HttpPost]
         public IActionResult Delete(cats editcats)
         {
-            db.remove(editcats);
+            db.Cats.remove(editcats);
 
             db.save();
             return RedirectToAction("Index");

@@ -43,5 +43,9 @@ namespace webgreen.Repository
         {
             dbSet.RemoveRange(entity);
         }
+        //public void ddd(IServiceCollection services)
+        //{
+        //    services.
+        //}
     }
 }

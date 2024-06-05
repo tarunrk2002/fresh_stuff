@@ -6,7 +6,7 @@ namespace webgreen.Repository.IRepository
 
     {
         void update(cats data);
-        void save();
+        
 
         
         

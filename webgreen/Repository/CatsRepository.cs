@@ -12,10 +12,7 @@ namespace webgreen.Repository
             this.data = db;
         }
 
-        public void save()
-        {
-           data.SaveChanges();
-        }
+       
 
         public void update(cats dat)
         {
