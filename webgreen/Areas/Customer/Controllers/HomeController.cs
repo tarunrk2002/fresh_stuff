@@ -5,6 +5,7 @@ using webgreen.Models.Models;
 
 namespace webgreen.Controllers
 {
+    [Area("customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

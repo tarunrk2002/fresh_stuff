@@ -7,6 +7,7 @@ using webgreen.Repository.IRepository;
 
 namespace webgreen.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller   
     {
         private readonly Iunitofwork db;

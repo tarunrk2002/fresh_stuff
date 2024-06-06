@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Category\ddwd.razor" />
-    <Content Remove="Views\Category\Next.razor" />
+    <Content Remove="Areas\admin\Views\Category\ddwd.razor" />
+    <Content Remove="Areas\admin\Views\Category\Next.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,14 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\admin\Controllers\" />
-    <Folder Include="Areas\admin\Data\" />
-    <Folder Include="Areas\admin\Models\" />
-    <Folder Include="Areas\admin\Views\" />
-    <Folder Include="Areas\Customer\Controllers\" />
-    <Folder Include="Areas\Customer\Data\" />
-    <Folder Include="Areas\Customer\Models\" />
-    <Folder Include="Areas\Customer\Views\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

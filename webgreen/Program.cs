@@ -33,7 +33,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Category}/{action=index}/{id?}");
+    pattern: "{area=Admin}/{controller=Category}/{action=index}/{id?}");
 
 app.Run();
 
