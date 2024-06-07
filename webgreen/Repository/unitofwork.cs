@@ -8,10 +8,12 @@ namespace webgreen.Repository
     {
         private ApplicationDbContext data;
         public ICatsRepository Cats { get; private set; }
+        public IProductRepository Product { get; private set; }
         public unitofwork(ApplicationDbContext data)
         {
             this.data = data;
             Cats = new CatsRepository(data);
+            Product = new ProductRepository(data);
         }
 
 
