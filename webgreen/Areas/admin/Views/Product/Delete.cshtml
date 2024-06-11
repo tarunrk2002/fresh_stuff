@@ -1,10 +1,10 @@
-﻿@* @model cats
+﻿@model Product
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="~/css/stylesheet.css" rel="stylesheet" />
-    <title>Editing Product</title>
-
+    <title>Create Product</title>
     <style>
         .form-group {
             padding-top: 20px;
@@ -13,64 +13,151 @@
         #submitCat {
             padding-top: 20px;
         }
+
+        .card {
+            width: 500px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-bottom: 1px solid dimgray;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .text-focus-in {
+            animation: text-focus-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        keyframes text-focus-in {
+            0%
+
+        {
+            filter: blur(12px);
+            opacity: 0;
+        }
+
+        100% {
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        }
     </style>
 </head>
 <body>
-
-
-
     <form method="post">
         <div class="row">
-            <div class="col-lg-6"
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-focus-in">Delete Product</h2>
 
-               <div class="card" style="width: 500px; height: 290px; padding-bottom: 28px; background-color:darkgrey; border-bottom-color:dimgray;">
-                   <div class="card-body">
-                       <h2 class="text-focus-in">Delete Product</h2>
+                            <div class="container">
+                                <!-- Product Name -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="name">Product Name</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Title" disabled placeholder="Enter product name" class="form-control" />
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-                   <div class="container">
-                       <div class="form-group row" style="display: flex; align-items: center;">
-                           <div class="col-sm-4">
-                               <label for="name">Product Name</label>
-                           </div>
-                           <div class="col-sm-6">
-                            <input asp-for="name" placeholder="Enter your name">
-                            <span asp-validation-for="name" class="text-danger"></span>
-                           </div>
-                       </div>
-                       <div class="form-group row" style="display: flex; align-items: center;">
-                           <div class="col-sm-4">
-                               <label for="displayorder">Display Order</label>
-                           </div>
-                           <div class="col-sm-6">
-                               <input asp-for="displayorder"  placeholder="Display number">
-                            <span asp-validation-for="displayorder" class="text-danger"></span>
+                                <!-- Display Order -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="Description">Description</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Description" disabled placeholder="Description" class="form-control" />
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-                           </div>
-                       </div>
-                       <div class="form-group row">
-                           <div class="col-sm-6">
-                               <button type="submit" class="btn btn-primary" style="margin-left: 75px;">Delete</button>
+                                <!-- ISBN -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="ISBN">ISBN</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="ISBN" disabled placeholder="Enter ISBN" class="form-control" />
+                                        <span asp-validation-for="ISBN" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-                           </div>
-                           <div class=" col-sm">
-                            <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="margin-right: 75px;"> Go Back</a>
-                           </div>
-                       </div>
-                   </div>
-                   </<div>
+                                <!-- Author -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="Author">Author Name</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Author" disabled placeholder="Enter author name" class="form-control" />
+                                        <span asp-validation-for="Author" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-               </div>
-               </div>
+                                <!-- List Price -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="ListPrice">List Price</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="ListPrice" disabled placeholder="Enter list price" class="form-control" />
+                                        <span asp-validation-for="ListPrice" class="text-danger"></span>
+                                    </div>
+                                </div>
 
+                                <!-- Price -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="Price">Price</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Price" disabled placeholder="Enter price" class="form-control" />
+                                        <span asp-validation-for="Price" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-               </div>
-           </div>
+                                <!-- Price 50 -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="Price50">Price 50</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Price50" disabled placeholder="Enter price for 50 units" class="form-control" />
+                                        <span asp-validation-for="Price50" class="text-danger"></span>
+                                    </div>
+                                </div>
 
+                                <!-- Price 100 -->
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="Price100">Price 100</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input asp-for="Price100" disabled placeholder="Enter price for 100 units" class="form-control" />
+                                        <span asp-validation-for="Price100" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit and Go Back Buttons -->
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 75px;">Delete</button>
+                                </div>
+                                <div class="col-sm">
+                                    <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="margin-right: 75px;">Go Back</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
-
-
-
-    <!-- Include Bootstrap JS and dependencies -->
-
 </body>
-</html> *@
+</html>
