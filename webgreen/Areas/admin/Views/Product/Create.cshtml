@@ -15,7 +15,7 @@
         .card {
             width: 500px;
             padding: 20px;
-            background-color: darkgrey;
+            background-color: #f2f2f2;
             border-bottom: 1px solid dimgray;
         }
         .card-body {
@@ -40,7 +40,8 @@
     <form method="post">
         <div class="row">
             <div class="col-lg-6">
-                <div class="card">
+                <div class="row">
+                    <div class="card">
                     <div class="card-body">
                         <h2 class="text-focus-in">Create Product</h2>
 
@@ -73,7 +74,7 @@
                                     <label for="ISBN">ISBN</label>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input asp-for="ISBN" placeholder="Enter ISBN" class="form-control" />
+                                    <input asp-for="ISBN" disabled placeholder="Enter ISBN" class="form-control" />
                                     <span asp-validation-for="ISBN" class="text-danger"></span>
                                 </div>
                             </div>
@@ -144,6 +145,7 @@
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
             </div>
         </div>
