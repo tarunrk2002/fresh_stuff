@@ -1,4 +1,4 @@
-﻿@* @model List<Product>
+﻿@model List<Product>
 
 @if (TempData["ok"] != null){
 
@@ -15,7 +15,7 @@
 }
 
 <partial name="_viewpartial" />
-<partial name="_adithya" />
+
     
 <!DOCTYPE html>
 <html lang="en">
@@ -50,8 +50,13 @@
             <thead class="thead-light">
                 
                     <tr>
-                        <th>Name</th>
-                        <th>DisplayOrder</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>ISBN</th>
+                        <th>List Price</th>
+                        <th>Price</th>
+                        <th>Price50</th>
+                        <th>Price100</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -61,13 +66,19 @@
                 @foreach (var data in Model)
                 {
                 <tr>
-                    <td>@data.name</td>   
-                    <td>@data.displayorder</td>
+                    <td>@data.Title</td>   
+                    <td>@data.Description</td>
+                    <td>@data.ISBN</td>
+                    <td>@data.ListPrice</td>
+                    <td>@data.Price</td>
+                    <td>@data.Price50</td>
+                    <td>@data.Price100</td>
+
                     <td>
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@data.id"> <i class="bi bi-pencil-square"></i> </a>
+                            <a asp-controller="Product" asp-action="Edit" asp-route-id=""> <i class="bi bi-pencil-square"></i> </a>
                     </td>
                         <td>
-                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@data.id"> <i class="bi bi-trash3"></i> </a>
+                            <a asp-controller="Product" asp-action="Delete" asp-route-id=""> <i class="bi bi-trash3"></i> </a>
                         </td>
                 </tr>
                 }
@@ -77,4 +88,4 @@
     
     
 </body>
-</html> *@
+</html>
