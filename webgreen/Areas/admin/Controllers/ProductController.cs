@@ -19,7 +19,7 @@ namespace webgreen.Controllers
         }
         public IActionResult Index()
         {
-            List<Product> pd = db.Product.GetAll().ToList();
+            var pd = db.Product.GetAll().ToList();
            
            
 
