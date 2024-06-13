@@ -17,10 +17,10 @@ namespace webgreen.DataAccess.data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<cats>().HasData(
-            //    new cats { id = 1, name = "comedy", displayorder = 1 },
-            //    new cats { id = 2, name = "romance", displayorder = 2 },
-            //    new cats { id = 3, name = "romcom", displayorder = 3 });
+            modelBuilder.Entity<cats>().HasData(
+                new cats { id = 1, name = "comedy", displayorder = 1 },
+                new cats { id = 2, name = "romance", displayorder = 2 },
+                new cats { id = 3, name = "romcom", displayorder = 3 });
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -33,7 +33,9 @@ namespace webgreen.DataAccess.data
                     ListPrice = 99,
                     Price = 90,
                     Price50 = 85,
-                    Price100 = 80
+                    Price100 = 80,
+                    Categoryid = 1
+
                 },
                 new Product
                 {
@@ -45,7 +47,8 @@ namespace webgreen.DataAccess.data
                     ListPrice = 40,
                     Price = 30,
                     Price50 = 25,
-                    Price100 = 20
+                    Price100 = 20,
+                    Categoryid=3
                 },
                 new Product
                 {
@@ -57,7 +60,8 @@ namespace webgreen.DataAccess.data
                     ListPrice = 55,
                     Price = 50,
                     Price50 = 40,
-                    Price100 = 35
+                    Price100 = 35,
+                    Categoryid=1
                 },
                 new Product
                 {
@@ -69,7 +73,8 @@ namespace webgreen.DataAccess.data
                     ListPrice = 70,
                     Price = 65,
                     Price50 = 60,
-                    Price100 = 55
+                    Price100 = 55,
+                    Categoryid =2
                 },
                 new Product
                 {
@@ -81,7 +86,8 @@ namespace webgreen.DataAccess.data
                     ListPrice = 30,
                     Price = 27,
                     Price50 = 25,
-                    Price100 = 20
+                    Price100 = 20,
+                    Categoryid=3
                 },
                 new Product
                 {
@@ -93,7 +99,8 @@ namespace webgreen.DataAccess.data
                     ListPrice = 25,
                     Price = 23,
                     Price50 = 22,
-                    Price100 = 20
+                    Price100 = 20,
+                    Categoryid =2
                 });
         }
     }

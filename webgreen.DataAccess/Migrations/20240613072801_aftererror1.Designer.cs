@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webgreen.DataAccess.data;
 
@@ -10,9 +11,11 @@ using webgreen.DataAccess.data;
 namespace webgreen.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240613072801_aftererror1")]
+    partial class aftererror1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +35,6 @@ namespace webgreen.DataAccess.Migrations
                     b.Property<string>("Author")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Categoryid")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -63,8 +63,6 @@ namespace webgreen.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Categoryid");
-
                     b.ToTable("products");
 
                     b.HasData(
@@ -72,7 +70,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 1,
                             Author = "Billy Spark",
-                            Categoryid = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SWD9999001",
                             ListPrice = 99.0,
@@ -85,7 +82,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 2,
                             Author = "Nancy Hoover",
-                            Categoryid = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "CAW777777701",
                             ListPrice = 40.0,
@@ -98,7 +94,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 3,
                             Author = "Julian Button",
-                            Categoryid = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "RITO5555501",
                             ListPrice = 55.0,
@@ -111,7 +106,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 4,
                             Author = "Abby Muscles",
-                            Categoryid = 2,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WS3333333301",
                             ListPrice = 70.0,
@@ -124,7 +118,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 5,
                             Author = "Ron Parker",
-                            Categoryid = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SOTJ1111111101",
                             ListPrice = 30.0,
@@ -137,7 +130,6 @@ namespace webgreen.DataAccess.Migrations
                         {
                             Id = 6,
                             Author = "Laura Phantom",
-                            Categoryid = 2,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "FOT000000001",
                             ListPrice = 25.0,
@@ -187,17 +179,6 @@ namespace webgreen.DataAccess.Migrations
                             displayorder = 3,
                             name = "romcom"
                         });
-                });
-
-            modelBuilder.Entity("webgreen.Models.Models.Product", b =>
-                {
-                    b.HasOne("webgreen.Models.Models.cats", "catfromanotherclass")
-                        .WithMany()
-                        .HasForeignKey("Categoryid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("catfromanotherclass");
                 });
 #pragma warning restore 612, 618
         }
