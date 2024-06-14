@@ -79,9 +79,7 @@ namespace webgreen.Models.Models
         [ForeignKey("Categoryid")]
         public cats catfromanotherclass { get; set; }
 
-
-
-
+        public string imageurl { get; set; }
 
     }
 }

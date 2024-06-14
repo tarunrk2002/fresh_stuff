@@ -34,7 +34,8 @@ namespace webgreen.DataAccess.data
                     Price = 90,
                     Price50 = 85,
                     Price100 = 80,
-                    Categoryid = 1
+                    Categoryid = 1,
+                    imageurl=""
 
                 },
                 new Product
@@ -48,7 +49,8 @@ namespace webgreen.DataAccess.data
                     Price = 30,
                     Price50 = 25,
                     Price100 = 20,
-                    Categoryid=3
+                    Categoryid=3,
+                    imageurl = ""
                 },
                 new Product
                 {
@@ -61,7 +63,8 @@ namespace webgreen.DataAccess.data
                     Price = 50,
                     Price50 = 40,
                     Price100 = 35,
-                    Categoryid=1
+                    Categoryid=1,
+                    imageurl = ""
                 },
                 new Product
                 {
@@ -74,7 +77,8 @@ namespace webgreen.DataAccess.data
                     Price = 65,
                     Price50 = 60,
                     Price100 = 55,
-                    Categoryid =2
+                    Categoryid =2,
+                    imageurl = ""
                 },
                 new Product
                 {
@@ -87,7 +91,8 @@ namespace webgreen.DataAccess.data
                     Price = 27,
                     Price50 = 25,
                     Price100 = 20,
-                    Categoryid=3
+                    Categoryid=3,
+                    imageurl = ""
                 },
                 new Product
                 {
@@ -100,7 +105,8 @@ namespace webgreen.DataAccess.data
                     Price = 23,
                     Price50 = 22,
                     Price100 = 20,
-                    Categoryid =2
+                    Categoryid =2,
+                    imageurl = ""
                 });
         }
     }
