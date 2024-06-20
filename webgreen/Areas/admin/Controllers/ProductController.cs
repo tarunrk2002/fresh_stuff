@@ -19,26 +19,11 @@ namespace webgreen.Controllers
         }
         public IActionResult Index()
         {
-
-            // we can get the data in many types
-            
-
-
-
-            //IEnumerable<Product> pd = db.Product.GetAll();
-            //IList<Product> pd = db.Product.GetAll().ToList();
-            //IList<Product> pd = db.Product.GetAll().ToList();
-            //ICollection<Product> pd =  db.Product.GetAll().ToList();
-
-            //List<Product> pd = db.Product.GetAll().ToList();
-
-            //eifjie
-
+            List<Product> pd = db.Product.GetAll().ToList();
 
 
            
-
-            
+           
 
             return View(pd);
         }
