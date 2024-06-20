@@ -30,7 +30,7 @@ namespace webgreen.Controllers
             //IList<Product> pd = db.Product.GetAll().ToList();
             //ICollection<Product> pd =  db.Product.GetAll().ToList();
 
-            List<Product> pd = db.Product.GetAll().ToList();
+            //List<Product> pd = db.Product.GetAll().ToList();
 
             //eifjie
 
