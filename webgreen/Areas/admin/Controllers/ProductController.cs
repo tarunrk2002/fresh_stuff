@@ -20,13 +20,7 @@ namespace webgreen.Controllers
         public IActionResult Index()
         {
             List<Product> pd = db.Product.GetAll().ToList();
-
-
-
-           
-           
-
-            return View(pd);
+              return View(pd);
         }
         
         public IActionResult Create()
